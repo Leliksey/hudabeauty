@@ -47,12 +47,12 @@ a {
     max-width: 1540px;
     margin: auto;
 }
-@media(max-width: 1650px) {
+@media (max-width: 1650px) {
     .container_1540 {
         padding: 0 30px;
     }
 }
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .container_1540 {
         padding: 0 20px;
     }
@@ -175,6 +175,17 @@ a {
     justify-content: center;
     gap: 24px;
 }
+@media (max-width: 1100px) {
+    .menu {
+        gap: 10px;
+    }
+}
+@media (max-width: 992px) {
+    .menu {
+        display: none !important;
+    }
+}
+
 .menu__item {
 }
 .menu__link {
@@ -233,12 +244,12 @@ a {
     overflow: hidden;
     height: 100%;
 }
-@media(max-width: 1650px) {
+@media (max-width: 1650px) {
     .slider-item {
         height: 51vw;
     }
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .slider-item {
         max-width: calc(100vw - 60px);
         height: auto;
@@ -272,10 +283,10 @@ a {
     width: 100%;
     cursor: pointer;
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .owl-carousel .owl-item img,
     .slider-item img {
-        width: calc(100vw - 30px);
+        width: calc(100vw - 60px);
     }
 }
 
@@ -322,7 +333,7 @@ a {
     position: relative;
     height: 100%;
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .slider-item-img {
         width: max-content;
     }
@@ -344,12 +355,12 @@ a {
     align-items: center;
     max-height: 844px;
 }
-@media(max-width: 1650px) {
+@media (max-width: 1650px) {
     .sectionProduct__sliders {
         align-items: flex-start;
     }
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .sectionProduct__sliders {
         max-height: 100%;
     }
@@ -359,7 +370,7 @@ a {
     max-width: 844px;
     /* max-height: 844px; */
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .main__img {
         display: none;
     }
@@ -370,12 +381,12 @@ a {
     grid-template-columns: 1.75fr 1fr;
     gap: 30px;
 }
-@media(max-width: 1570px) {
+@media (max-width: 1570px) {
     .sectionProduct {
         grid-template-columns: 1.2fr 1fr;
     }
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .sectionProduct {
         grid-template-columns: 1fr;
         position: relative;
@@ -384,7 +395,7 @@ a {
 
 .productInfo {
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .productInfo {
         /* margin-top: 50px; */
     }
@@ -400,12 +411,12 @@ a {
     height: 40px;
     cursor: pointer;
 }
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
     .productInfo__heading svg {
         position: absolute;
         top: 20px;
         right: 20px;
-        padding: 6px;
+        padding: 3px;
         background-color: #fff;
         border-radius: 50%;
         width: 30px;
@@ -429,7 +440,7 @@ a {
     font-family: "Futura PT Demi";
     padding-right: 30px;
 }
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .productInfo__title {
         font-size: 22px;
     }
@@ -564,15 +575,17 @@ a {
 }
 
 .product__tabs-item {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 24.2px;
-    color: #18181a;
+    color: #000;
     border-bottom: 1px solid transparent;
     cursor: pointer;
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-transform: uppercase;
+    /* font-family: "Futura PT Demi"; */
 }
 .product__tabs-item::after {
     content: "";
@@ -636,6 +649,9 @@ a {
     color: #18181a;
     font-weight: 500;
 }
+.text_descr {
+    font-weight: 400;
+}
 .product__tabs b {
     font-weight: 400;
 }
@@ -646,7 +662,6 @@ a {
     background-color: #e31870;
     border-radius: 50px;
     font-family: "Futura PT Demi";
-    margin-top: 16px;
     max-width: 247px;
     width: 100%;
     padding: 14px 0;
@@ -681,20 +696,19 @@ a {
     z-index: 6;
     transform: translateY(-100%);
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
     z-index: 6;
     pointer-events: none;
 }
-.popup.open { 
+.popup.open {
     transform: translateY(0);
     opacity: 1;
-    transition: .5s;
+    transition: 0.5s;
     pointer-events: all;
 }
 .popup__delivery {
     max-width: 468px;
     background-color: #fff;
-
 }
 .popup__heading {
     display: flex;
@@ -714,7 +728,7 @@ a {
 }
 .popup__close {
     max-width: 15px;
-    opacity: .8;
+    opacity: 0.8;
     cursor: pointer;
 }
 .popup__close:hover {
@@ -732,9 +746,73 @@ a {
     font-size: 13px;
     line-height: normal;
     color: #212529;
-    opacity: .8;
+    opacity: 0.8;
     /* font-family: "HelveticaNeueCyr", serif; */
 }
 .popup__desc a {
     color: #3f3fff;
+}
+
+.productInfo__count {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.productInfo__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    gap: 24px;
+}
+.productInfo__count div {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2b2b2b;
+    border: 1px solid #191919;
+    cursor: pointer;
+}
+.productInfo__count div:hover {
+    filter: contrast(0.9);
+}
+.count {
+    font-size: 20px;
+}
+.plus,
+.minus {
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+}
+.minus {
+    background-image: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cpath d='M6 12H18' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.plus {
+    background-image: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='24' height='24' fill='white'/%3E%3Cpath d='M12 6V18' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6 12H18' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.productInfo__main_img {
+    margin-top: 24px;
+}
+
+.sectionReviews {
+    padding: 20px 30px;
+    width: 80%;
+    margin: 40px auto 0;
+    border: 1px solid #797676;
+}
+.sectionReviews__title {
+    font-family: "Futura PT Demi";
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: .04688rem;
+    color: #191919;
+}
+.sectionReviews__quotes {
+    max-width: 38px;
+    margin: 40px auto 0;
 }

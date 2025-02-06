@@ -158,7 +158,9 @@
                     <div class="productInfo__action">
                         <button class="order">buy now</button>
                         <div class="productInfo__count">
-
+                            <div class="minus"></div>
+                            <span class="count">1</span>
+                            <div class="plus"></div>
                         </div>
                     </div>
                     <div class="productInfo__dates">
@@ -214,6 +216,15 @@
                         ?>
                     </div>
                     <div class="productInfo__delivery">View shipping and returns options</div>
+                    <div class="productInfo__main_img">
+                        <img src="assets/img/girl_1.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section class="sectionReviews">
+                <div class="sectionReviews__title">Reviews</div>
+                <div class="sectionReviews__quotes">
+                    <img src="assets/img/quotes.png" alt="">
                 </div>
             </section>
         </div>
