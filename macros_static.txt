@@ -1,0 +1,48 @@
+product_name;Peptide lip tints
+breadcrumbs_1;Home page
+breadcrumbs_2;Lips
+price_old;£79
+price_new;£9.99
+promotion_ends_days;days
+promotion_ends_hours;hours
+promotion_ends_minutes;minutes
+promotion_ends_seconds;seconds
+promotion_ends_text;La promotion se termine dans
+text_price_old;Original price was:
+text_price_new;Current price is:
+button_buy;Sold out
+only;Only
+left_stock;left in stock
+product_limit;Each product is limited to 1 per person
+people_purch;people have purchased this in
+days;days
+delivered_days;Estimated to be delivered on
+category;Category:
+category_auto_detailing;Makeup
+category_baby;Skincare
+category_bath_body;Haircare
+category_casual_snacks;Body care
+category_cleaning_supplies;Fragrances
+category_easter_decor;Nail products
+category_electronic_product;Beauty tools
+category_electronics;Men's grooming
+category_health_care;Organic cosmetics
+category_home;Travel-size products
+category_kitchen;
+category_latest;
+category_pet_supplies;
+category_sports;
+category_todays_deals;
+category_toy;
+category_uncategorized;
+text_leave_review;Laissez un avis
+text_reviews;Avis
+footer_about_store;About the store
+footer_company_policies;COMPANY POLICIES
+footer_terms_of_service;Terms Of Service
+footer_privacy_policy;Privacy Policy
+footer_return_policy;Return Policy
+footer_about_us;ABOUT US
+footer_shipping_information;Shipping Information
+footer_contact_us;Contact Us
+footer_about_us_text;About Us
