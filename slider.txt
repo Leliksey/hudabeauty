@@ -1,4 +1,12 @@
-0.png
-1.png
-2.png
-3.png
+girl_1.jpg
+girl_2.jpg
+girl_3.jpg
+granites.jpg
+klubnikes.jpg
+man.jpg
+mylos.jpg
+parfumes.jpg
+parfumes_klubnikes.jpg
+rafaello.jpg
+zefires.jpg
+flowers.jpg

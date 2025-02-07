@@ -1,3 +1,6 @@
+html, body {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
@@ -23,6 +26,14 @@ img {
 a {
     text-decoration: none;
     color: initial;
+}
+input,
+textarea {
+    outline: none;
+    border: none;
+}
+textarea {
+    resize: none;
 }
 .mobile {
     display: none;
@@ -651,9 +662,12 @@ a {
 }
 .text_descr {
     font-weight: 400;
+    font-family: 'Futura PT Book';
+    
 }
 .product__tabs b {
     font-weight: 400;
+    font-family: "Futura PT Demi";
 }
 .order {
     text-transform: uppercase;
@@ -668,6 +682,12 @@ a {
     color: #fff;
     cursor: pointer;
 }
+@media(max-width: 576px) {
+    .order {
+        padding: 12px 0;
+    }
+}
+
 .productInfo__delivery {
     margin-top: 24px;
     font-size: 16px;
@@ -699,6 +719,8 @@ a {
     transition: 0.5s;
     z-index: 6;
     pointer-events: none;
+    max-width: 468px;
+    background-color: #fff;
 }
 .popup.open {
     transform: translateY(0);
@@ -707,8 +729,6 @@ a {
     pointer-events: all;
 }
 .popup__delivery {
-    max-width: 468px;
-    background-color: #fff;
 }
 .popup__heading {
     display: flex;
@@ -765,6 +785,25 @@ a {
     margin-top: 16px;
     gap: 24px;
 }
+@media(max-width: 1024px) {
+    .productInfo__action {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        width: -webkit-fill-available;
+        padding: 10px 60px;
+        background-color: #fff;
+        z-index: 5;
+        border-top: 1px solid #ccc;
+    }
+}
+@media(max-width: 768px) {
+    .productInfo__action {
+        padding: 10px 20px;
+    }
+}
+
 .productInfo__count div {
     width: 44px;
     height: 44px;
@@ -776,6 +815,13 @@ a {
     border: 1px solid #191919;
     cursor: pointer;
 }
+@media(max-width: 576px) {
+    .productInfo__count div {
+        width: 35px;
+        height: 35px;
+    }
+}
+
 .productInfo__count div:hover {
     filter: contrast(0.9);
 }
@@ -801,18 +847,600 @@ a {
 
 .sectionReviews {
     padding: 20px 30px;
-    width: 80%;
+    /* width: 80%; */
     margin: 40px auto 0;
     border: 1px solid #797676;
 }
+@media(max-width: 768px) {
+    .sectionReviews {
+        padding: 20px;
+    }
+}
+
 .sectionReviews__title {
     font-family: "Futura PT Demi";
     font-size: 28px;
     text-align: center;
-    letter-spacing: .04688rem;
+    letter-spacing: 0.04688rem;
     color: #191919;
 }
 .sectionReviews__quotes {
     max-width: 38px;
     margin: 40px auto 0;
+}
+@media(max-width: 768px) {
+    .sectionReviews__quotes {
+        margin: 20px auto 0;
+    }
+}
+
+.main__review {
+    font-style: italic;
+    font-size: 19px;
+    font-family: "Futura PT Demi";
+    text-align: center;
+    margin-top: 30px;
+}
+.main__review-author {
+    text-transform: uppercase;
+    color: #eb3986;
+    text-align: center;
+}
+
+.sectionReviews__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+@media(max-width: 992px) {
+    .sectionReviews__action {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.sectionReviews__group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.sectionReviews__all-rating {
+    font-size: 46px;
+    color: #2b2b2b;
+}
+@media(max-width: 768px) {
+    .sectionReviews__all-rating {
+        font-size: 32px;
+    }
+}
+
+.sectionReviews__all-rating .stars {
+}
+.sectionReviews__all-rating .star {
+}
+.sectionReviews__all-revs {
+}
+.sectionReviews__btns {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+@media(max-width: 576px) {
+    .sectionReviews__btns {
+        gap: 10px;
+    }
+}
+
+.btn-dark {
+    padding: 10px 40px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: "Futura PT Demi";
+    width: max-content;
+    max-width: 200px;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+@media(max-width: 576px) {
+    .btn-dark {
+        padding: 10px;
+    }
+}
+
+.btn-dark:hover {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+}
+.addRev__stars svg {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.addRev__stars svg:hover path {
+    fill: #000;
+}
+.addRev {
+    padding-top: 25px;
+    border-top: 1px solid #e3e3e3;
+    margin-top: 50px;
+    display: none;
+}
+.addRev__title {
+    font-size: 15px;
+    line-height: normal;
+    color: #6a6c77;
+    text-transform: uppercase;
+}
+.addRev__small_text {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: normal;
+    color: #2b2b2b;
+    display: flex;
+    align-items: flex-start;
+}
+.addRev__medium_text {
+    font-size: 15px;
+    line-height: normal;
+    color: #6a6c77;
+    margin-top: 15px;
+}
+.label::before {
+    content: "*";
+    color: red;
+    font-size: 15px;
+}
+.addRev__stars {
+    margin-top: 15px;
+}
+.addRev input,
+.addRev textarea {
+    width: -webkit-fill-available;
+    border: 1px solid #000;
+    margin-top: 15px;
+    padding: 12px;
+}
+
+.user__info {
+    max-width: 1035px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 0;
+    margin-left: auto;
+    gap: 25px;
+}
+@media(max-width: 576px) {
+    .user__info {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.user__info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+@media(max-width: 576px) {
+    .user__info-group {
+        gap: 0;
+    }
+}
+
+.form-send {
+    margin-top: 15px;
+    margin-right: 0;
+    margin-left: auto;
+    font-size: 15px;
+    text-transform: uppercase;
+    line-height: normal;
+    color: #2b2b2b;
+    padding: 10px 16px;
+    border: 2px solid #eb3986;
+    width: 100%;
+    max-width: 150px;
+    cursor: pointer;
+    font-family: "Futura PT Demi";
+    display: block;
+}
+.form-send:hover {
+    background-color: #eb3986;
+}
+.signature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f9f3eb;
+    padding: 16px 0;
+    margin-top: 10px;
+}
+.signature.toped {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f9f3eb;
+    padding: 16px 0;
+    margin-top: 50px;
+}
+.signature__btn {
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: normal;
+    cursor: pointer;
+}
+.signature__btn.active {
+    font-family: "Futura PT Demi";
+    border-bottom: 1px solid #000;
+}
+.beTheFirst {
+    display: none;
+    color: #fff;
+    background-color: #6a6c77;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 50px auto 10px;
+    width: max-content;
+}
+.popup__review .popup__subtitle,
+.popup__ask .popup__subtitle {
+    font-size: 30px;
+    text-align: center;
+}
+.error-message {
+    color: red;
+}
+.error {
+    border: 1px solid red !important;
+}
+.reviews__content__scroll {
+    overflow-x: auto;
+    height: 450px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 130px;
+    row-gap: 40px;
+    margin-top: 50px;
+}
+@media (max-width: 992px) {
+    .reviews__content__scroll {
+        column-gap: 70px;
+    }
+}
+@media (max-width: 768px) {
+    .reviews__content__scroll {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+    }
+}
+
+.reviews {
+    margin-top: 100px;
+    margin-bottom: 140px;
+}
+@media (max-width: 768px) {
+    .reviews {
+        margin: 47px 0 70px;
+    }
+}
+
+.reviews__content {
+}
+.reviews__heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+    .reviews__heading {
+        margin-bottom: 0;
+    }
+}
+
+.reviews__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #18181a;
+}
+.reviews__add {
+    padding: 11px;
+    border-radius: 8px;
+    max-width: 239px;
+    width: 100%;
+    border: 1px solid #073f3be6;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22.5px;
+    color: #18181a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .reviews__add {
+        margin-top: 36px;
+        max-width: 100%;
+        text-align: center;
+        width: max-content;
+        margin: auto;
+    }
+    .reviews__add.desktop {
+        display: none;
+    }
+}
+
+.reviews__item {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .reviews__item {
+        flex-direction: column-reverse;
+        row-gap: 16px;
+        position: relative;
+        margin-top: 0;
+    }
+    .reviews__item:first-child {
+        margin-top: 12px;
+    }
+}
+
+.reviews__left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+@media (max-width: 768px) {
+    .reviews__left {
+        flex-direction: column-reverse;
+    }
+}
+
+.reviews__info {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 14px;
+}
+.reviews__avatar {
+    /* width: 46px;
+    height: 46px; */
+    display: none;
+}
+.reviews__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.reviews__name {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.15px;
+    color: #212121;
+}
+.reviews__rating {
+    display: flex;
+    column-gap: 3px;
+}
+@media (max-width: 768px) {
+    .reviews__rating {
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+}
+
+.reviews__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28.96px;
+    color: #4f4f4f;
+    font-family: 'Futura PT Book';
+}
+.reviews__date {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #b0a5a5;
+    margin-right: 5px;
+}
+.reviews__add.mobile {
+    display: none;
+}
+@media (max-width: 768px) {
+    .reviews__add.mobile {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+.reviews__content__scroll::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+    border-radius: 16px;
+}
+.reviews__content__scroll::-webkit-scrollbar-thumb {
+    background-color: #eb3986;
+    border-radius: 0px;
+    cursor: grab;
+}
+
+.banner {
+    background-color: #f5ddd8;
+    padding: 24px 20px 80px;
+    margin: 30px 0;
+}
+.banner__title {
+    font-size: 28px;
+    line-height: normal;
+    color: #212529;
+    font-family: "Futura PT Demi";
+    text-align: center;
+}
+.banner__text {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: normal;
+    color: #212529;
+    text-align: center;
+}
+.footer {
+    position: relative;
+
+}
+@media(max-width: 1024px) {
+    .footer {
+        padding-bottom: 60px;
+    }
+}
+
+.footer__content {
+    border-top: 1px solid #000;
+    padding: 44px 20px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5%;
+}
+@media(max-width: 1024px) {
+    .footer__content {
+        padding: 94px 20px 0;
+    }
+}
+@media(max-width: 992px) {
+    .footer__content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.footer__column {
+
+}
+.footer__column-title {
+    font-size: 16px;
+    line-height: normal;
+    color: #191919;
+    font-family: "Futura PT Demi";
+}
+@media(max-width: 992px) {
+    .footer__column-title {
+        text-align: center;
+    }
+}
+
+.footer__column-list {
+}
+.footer__column-list a {
+    font-size: 16px;
+    line-height: normal;
+    color: #191919;
+    padding: 5px 0;
+    display: block;
+    font-family: 'Futura PT Book';
+}
+@media(max-width: 992px) {
+    .footer__column-list a {
+        text-align: center;
+    }
+}
+.footer__column-list a:hover {
+    text-decoration: underline;
+}
+.footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+@media(max-width: 1024px) {
+    .footer__socials {
+        position: absolute;
+        top: 30px;
+    }
+}
+
+.footer__socials a img {
+    max-width: 32px;
+}
+.footer__rules {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.footer__rules {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #797676;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+@media(max-width: 992px) {
+    .footer__rules {
+        justify-content: center;
+    }
+}
+@media(max-width: 992px) {
+    .footer__rules {
+        flex-direction: column-reverse;
+        gap: 15px;
+        align-items: center;
+    }
+}
+
+.footer__rules a {
+    color: #797676;
+    text-decoration: underline;
+}
+.btn-top {
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    max-width: 50px;
+    cursor: pointer;
+}
+@media(max-width: 1440px) {
+    .btn-top {
+        position: fixed;
+        top: unset;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+@media(max-width: 1024px) {
+    .btn-top {
+        top: unset;
+        bottom: 70px;
+        right: 10px;
+    }
+}
+.zoom-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.zoom-container img {
+    transition: transform 0.2s ease-out;
+}
+
+.zoom-container:hover img {
+    transform: scale(2); /* Увеличение изображения в 2 раза */
+    cursor: zoom;
 }

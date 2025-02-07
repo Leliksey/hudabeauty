@@ -68,6 +68,7 @@ $(document).ready(function() {
     $(".slider-item-img").on("click", function() {
         let src = $(this).find("img").attr("src");
         $(".main__img img, .productInfo__main_img img").attr("src", src);
+        $(".main__img").attr("href", src);
         if($(window).width() > 1024 ) {
             $(".slider-item-img").removeClass("active");
             $(this).addClass("active");
@@ -182,4 +183,186 @@ $(document).ready(function() {
                 $count.text(value - 1);
             }
         });
+
+
+        let selectedIndex = -1; // Хранит выбранный рейтинг
+
+    $(".addRev__stars svg").on("mouseenter", function () {
+        let index = $(this).index();
+        $(".addRev__stars svg").each(function (i) {
+            $(this).find("path").css("fill", i <= index ? "#000" : "#fff");
+        });
+    });
+
+    $(".addRev__stars").on("mouseleave", function () {
+        updateStars(); // Возвращаемся к выбранному рейтингу
+    });
+
+    $(".addRev__stars svg").on("click", function () {
+        selectedIndex = $(this).index(); // Фиксируем рейтинг
+        updateStars();
+    });
+
+    function updateStars() {
+        $(".addRev__stars svg").each(function (i) {
+            $(this).find("path").css("fill", i <= selectedIndex ? "#000" : "#fff");
+        });
+    }
+
+
+    $(".write_rev").on("click", function() {
+        $(".block-add-review").show();
+        $(".beTheFirst").hide();
+        $(".reviews__content__scroll").show();
+        $(".block-ask-question").hide();
+        $(".signature__btn").removeClass("active");
+        $(".signature").removeClass("toped");
+        $(".write_rev").addClass("active");
+    })
+    $(".ask_que").on("click", function() {
+        $(".beTheFirst").show();
+        $(".reviews__content__scroll").hide();
+        $(".block-add-review").hide();
+        $(".block-ask-question").show();
+        $(".signature__btn").removeClass("active");
+        $(".ask_que").addClass("active");
+        $(".signature").removeClass("toped");
+    })
+    $(".signature__btn").on("click", function() {
+        $(".signature__btn").removeClass("active");
+        $(this).addClass("active");
+        $(".signature").removeClass("toped");
+    })
+
+
+
+
+
+
+
+    $(".form-rev-send, .form-ask-send").on("click", function () {
+        let form = $(this).closest("form");
+        let isReviewForm = form.hasClass("block-add-review");
+        let isValid = true;
+
+        // Очистка предыдущих ошибок
+        form.find(".error-message").remove();
+        form.find("input, textarea").removeClass("error");
+
+        // Проверка рейтинга (только для формы отзыва)
+        if (isReviewForm) {
+            if ($(".addRev__stars svg.active").length === 0) {
+                $(".addRev__stars").after("<div class='error-message'>Select a rating</div>");
+                isValid = false;
+            }
+        }
+
+        // Проверка текстовых полей и textarea
+        form.find("input[type='text'], textarea").each(function () {
+            if ($(this).val().trim() === "") {
+                $(this).addClass("error").after("<div class='error-message'>This field is required</div>");
+                isValid = false;
+            }
+        });
+
+        // Проверка email
+        let emailInput = form.find("input[type='text']").eq(-1); // Последний input — email
+        let emailVal = emailInput.val().trim();
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailVal)) {
+            emailInput.addClass("error").after("<div class='error-message'>Enter a valid email</div>");
+            isValid = false;
+        }
+
+        if (isValid) {
+            if (isReviewForm) {
+                $(".overlay").fadeIn(300);
+                $("body").addClass("ovh");
+                $(".popup__review").addClass("open");
+            } else {
+                $(".overlay").fadeIn(300);
+                $("body").addClass("ovh");
+                $(".popup__ask").addClass("open");
+            }
+        }
+    });
+
+    // Фиксация рейтинга
+    let selectedItem = -1;
+    $(".addRev__stars svg").on("mouseenter", function () {
+        let index = $(this).index();
+        $(".addRev__stars svg").each(function (i) {
+            $(this).find("path").css("fill", i <= index ? "#000" : "#fff");
+        });
+    });
+
+    $(".addRev__stars").on("mouseleave", function () {
+        $(".addRev__stars svg").each(function (i) {
+            $(this).find("path").css("fill", i <= selectedItem ? "#000" : "#fff");
+        });
+    });
+
+    $(".addRev__stars svg").on("click", function () {
+        selectedItem = $(this).index();
+        $(".addRev__stars svg").removeClass("active");
+        $(".addRev__stars svg").each(function (i) {
+            $(this).find("path").css("fill", i <= selectedItem ? "#000" : "#fff");
+            if (i <= selectedItem) $(this).addClass("active");
+        });
+    });
+
+
+
+    let $btnTop = $(".btn-top");
+
+    // Показывать кнопку при прокрутке вниз
+    $(window).on("scroll", function () {
+        if ($(this).scrollTop() > 300) {
+            $btnTop.fadeIn();
+        } else {
+            $btnTop.fadeOut();
+        }
+    });
+
+    // Плавный скролл наверх
+    $btnTop.on("click", function () {
+        $("html, body").animate({ scrollTop: 0 }, 500);
+    });
+
+
+
+    // $(".main__img").magnificPopup({
+    //     type: "image",
+    //     gallery: {
+    //         enabled: true, // Включить галерею
+    //     }
+    // });
+
+
+    // $(".popup-zoom").magnificPopup({
+    //     type: "image",
+    //     gallery: {
+    //         enabled: true
+    //     }
+    // });
+
+    // $('.main__img').on('mousemove', function(e) {
+    //     const $img = $(this).find('img');
+    //     const containerWidth = $(this).width();
+    //     const containerHeight = $(this).height();
+    //     const imgWidth = $img.width();
+    //     const imgHeight = $img.height();
+
+    //     const mouseX = e.pageX - $(this).offset().left;
+    //     const mouseY = e.pageY - $(this).offset().top;
+
+    //     const moveX = (imgWidth - containerWidth) * (mouseX / containerWidth);
+    //     const moveY = (imgHeight - containerHeight) * (mouseY / containerHeight);
+
+    //     $img.css('transform', `translate(-${moveX}px, -${moveY}px) scale(1.5)`);
+    // });
+
+    // $('.main__img').on('mouseleave', function() {
+    //     $(this).find('img').css('transform', 'translate(0, 0) scale(1)');
+    // });
 });
