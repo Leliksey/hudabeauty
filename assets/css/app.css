@@ -266,6 +266,12 @@ textarea {
         height: auto;
     }
 }
+@media (max-width: 768px) {
+    .slider-item {
+        max-width: calc(100vw - 40px);
+        height: auto;
+    }
+}
 .owl-stage {
     display: flex;
 }
@@ -277,6 +283,12 @@ textarea {
     justify-content: center;
     margin-top: 10px;
 }
+@media(max-width: 768px) {
+    .owl-dot {
+        padding: 0 4px;
+    }
+}
+
 .owl-dot span {
     width: 8px;
     height: 8px;
@@ -298,6 +310,12 @@ textarea {
     .owl-carousel .owl-item img,
     .slider-item img {
         width: calc(100vw - 60px);
+    }
+}
+@media (max-width: 768px) {
+    .owl-carousel .owl-item img,
+    .slider-item img {
+        width: calc(100vw - 40px);
     }
 }
 
@@ -425,8 +443,8 @@ textarea {
 @media (max-width: 1024px) {
     .productInfo__heading svg {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 15px;
+        right: 30px;
         padding: 3px;
         background-color: #fff;
         border-radius: 50%;
@@ -463,8 +481,18 @@ textarea {
     align-items: center;
     gap: 12px;
 }
-.trustpilot {
+.trustpilotBlock {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     margin-top: 16px;
+}
+.trustpilotBlock span {
+    font-size: 16px;
+    color: #1B281D;
+}
+.trustpilot {
+    
     max-width: 80px;
     max-height: 20px;
 }
@@ -777,6 +805,7 @@ textarea {
     display: flex;
     align-items: center;
     gap: 16px;
+    display: none;
 }
 .productInfo__action {
     display: flex;
@@ -787,6 +816,23 @@ textarea {
 }
 @media(max-width: 1024px) {
     .productInfo__action {
+        /* position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        width: -webkit-fill-available;
+        padding: 10px 60px;
+        background-color: #fff;
+        z-index: 5;
+        border-top: 1px solid #ccc; */
+    }
+}
+
+.productInfo__action.fixing {
+    display: none;
+}
+@media(max-width: 1024px) {
+    .productInfo__action.fixing {
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -796,14 +842,15 @@ textarea {
         background-color: #fff;
         z-index: 5;
         border-top: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
     }
 }
 @media(max-width: 768px) {
-    .productInfo__action {
+    .productInfo__action.fixing {
         padding: 10px 20px;
     }
 }
-
 .productInfo__count div {
     width: 44px;
     height: 44px;
@@ -1075,6 +1122,7 @@ textarea {
     font-size: 15px;
     line-height: normal;
     cursor: pointer;
+    color: #000;
 }
 .signature__btn.active {
     font-family: "Futura PT Demi";
@@ -1414,6 +1462,7 @@ textarea {
     top: 30px;
     max-width: 50px;
     cursor: pointer;
+    display: none !important;
 }
 @media(max-width: 1440px) {
     .btn-top {
@@ -1443,4 +1492,122 @@ textarea {
 .zoom-container:hover img {
     transform: scale(2); /* Увеличение изображения в 2 раза */
     cursor: zoom;
+}
+.overlay__white {
+    background-color: #ffffff90;
+    display: block;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.popup__age {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    height: max-content;
+    border: 1px solid #eb3986;
+    border-radius: 16px;
+    padding: 60px 25px;
+    bottom: 0;
+    background-color: #fff;
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+@media(max-width: 992px) {
+    .popup__age {
+        max-width: 80%;
+        padding: 30px 20px;
+    }
+}
+
+.popup__age .popup__title {
+    text-align: center;
+    font-size: 30px;
+}
+@media(max-width: 768px) {
+    .popup__age .popup__title {
+        text-align: center;
+        font-size: 22px;
+    }
+}
+
+.popup__age .popup__subtitle {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 32px;
+}
+@media(max-width: 768px) {
+    .popup__age .popup__subtitle {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 16px;
+    }
+}
+
+.popup__age-step2 {
+    display: none;
+}
+.popup__age-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+@media(max-width: 768px) {
+    .popup__age-form {
+        margin-top: 20px;
+        gap: 10px;
+    }
+}
+
+
+.popup__age-form input {
+    border: 1px solid #797979;
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-size: 16px;
+    pointer-events: all;
+}
+.popup__age-form input::placeholder {
+    font-size: 12px;
+}
+
+.activate_btn,
+.popup__age-btn {
+    pointer-events: all;
+    border-radius: 16px;
+    padding: 9px 26px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #eb3986;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 230px;
+}
+.activate_btn:hover,
+.popup__age-btn:hover {
+    background-color: #ac2a62;
+}
+.activate_btn {
+    margin: 50px auto 0;
+    font-size: 32px;
+    display: block;
+    font-size: 26px;
+    max-width: 340px;
+}
+@media(max-width: 768px) {
+    .activate_btn {
+        margin: 40px auto 0;
+        font-size: 20px;
+    }
 }

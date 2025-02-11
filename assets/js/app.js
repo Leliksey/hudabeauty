@@ -27,7 +27,7 @@ $(document).ready(function() {
         $currentSlider.slick('slickNext');
         }
     }
-    
+    function initSlick() {
     slider.each(function(index, element) {
         var $element = $(element);
         // set the length of children in each loop
@@ -48,13 +48,15 @@ $(document).ready(function() {
                 breakpoint: 1024, // При ширине экрана <= 1024px
                 settings: {
                     vertical: false,
+                    settings: "unslick"
                 }
             },
         ]
     })
     .on('afterChange', onSliderAfterChange)
     .on('wheel', onSliderWheel);
-
+    }
+    initSlick()
     function killSlider() {
         if($(window).width() < 1025 ) {
             $(slider).slick('unslick');
@@ -101,7 +103,7 @@ $(document).ready(function() {
     $(document).on("click", ".product__tabs-item", function(e) {
         e.preventDefault();
         $(this).toggleClass("open");
-      });
+    });
 
 
 
@@ -159,12 +161,35 @@ $(document).ready(function() {
             }
         }
         initOwl()
+        function destroySlick() {
+            if ($(".slider-item").hasClass("slick-initialized")) {
+                $(".slider-item").slick("unslick");
+            }
+        }
+        
+        function destroyOwl() {
+            var $owl = $(".slider-item");
+            if ($owl.hasClass("owl-carousel")) {
+                $owl.trigger('destroy.owl.carousel')
+                    .removeClass('owl-carousel owl-loaded')
+                    .find('.owl-stage-outer').children().unwrap(); // Удаляем обёртку Owl
+            }
+        }
         setSliderHeight();
         $(window).on("resize", function() {
-            setSliderHeight();
-            killSlider();
-            $(".slider-item").trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');;
-            initOwl();
+            if($(window).width() < 1025) {
+                $(".slider-item").owlCarousel({
+                    loop: true,
+                    nav: false,
+                    dots: true,
+                    items: 1
+                });
+                
+            } else {
+                $(".slider-item").trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+                initSlick()
+                setSliderHeight();
+            }
         });
 
 
@@ -365,4 +390,113 @@ $(document).ready(function() {
     // $('.main__img').on('mouseleave', function() {
     //     $(this).find('img').css('transform', 'translate(0, 0) scale(1)');
     // });
+
+
+
+    function checkVisibility() {
+        var btnOrderTop = $('.btn_order_top');
+        var actionBottom = $('.productInfo__action_bottom');
+
+        // Если кнопка btn_order_top существует
+        if (btnOrderTop.length) {
+            // Получаем позицию кнопки и размер окна
+            var buttonTopPosition = btnOrderTop.offset().top;
+            var windowHeight = $(window).height();
+            var windowScrollTop = $(window).scrollTop();
+
+            // Если кнопка находится в области видимости экрана, скрываем action_bottom
+            if (buttonTopPosition <= windowScrollTop + windowHeight && buttonTopPosition + btnOrderTop.outerHeight() > windowScrollTop) {
+                actionBottom.fadeOut();  // Скрываем
+            } else {
+                actionBottom.fadeIn();  // Показываем
+            }
+        }
+    }
+
+    // Инициализируем проверку видимости при загрузке страницы и при прокрутке
+    checkVisibility();
+    $(window).on('scroll', function() {
+        checkVisibility();
+    });
+
+
+    $(".popup__age-btn").on("click", function () {
+        validateAge($(this).closest("form"));
+    });
+    
+    // Обработчик нажатия Enter в поле ввода
+    $("input[name='age']").on("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Предотвращаем стандартное поведение (например, отправку формы)
+            validateAge($(this).closest("form"));
+        }
+    });
+    
+    function validateAge(form) {
+        let $input = form.find("input[name='age']");
+        let value = $input.val().trim();
+        let regex = /^\d{4}\.\d{2}\.\d{2}$/; // Формат YYYY.MM.DD
+        let isValid = true;
+    
+        // Очистка предыдущих ошибок
+        form.find(".error").removeClass("error");
+        form.find(".error-message").remove();
+    
+        if (!regex.test(value)) {
+            $input.addClass("error");
+            if ($input.next(".error-message").length === 0) {
+                $input.after("<div class='error-message'>Введите дату в формате YYYY.MM.DD</div>");
+            }
+            isValid = false;
+        } else {
+            // Проверяем, чтобы дата была реальной
+            let parts = value.split(".");
+            let year = parseInt(parts[0], 10);
+            let month = parseInt(parts[1], 10);
+            let day = parseInt(parts[2], 10);
+            let date = new Date(year, month - 1, day);
+    
+            if (
+                date.getFullYear() !== year ||
+                date.getMonth() + 1 !== month ||
+                date.getDate() !== day
+            ) {
+                $input.addClass("error");
+                if ($input.next(".error-message").length === 0) {
+                    $input.after("<div class='error-message'>Введите корректную дату!</div>");
+                }
+                isValid = false;
+            }
+        }
+    
+        if (isValid) {
+            $(".popup__content").hide();
+            $(".popup__age-step2").show();
+        }
+    }
+    
+    // Разрешаем ввод только цифр и точки + автоформатирование YYYY.MM.DD
+    $("input[name='age']").on("input", function () {
+        let value = this.value.replace(/[^0-9]/g, ""); // Убираем всё, кроме цифр
+        if (value.length > 8) value = value.substring(0, 8); // Ограничение до 8 символов
+    
+        let formattedValue = "";
+        if (value.length > 4) {
+            formattedValue = value.substring(0, 4) + "." + value.substring(4);
+        } else {
+            formattedValue = value;
+        }
+        if (value.length > 6) {
+            formattedValue = formattedValue.substring(0, 7) + "." + value.substring(6);
+        }
+    
+        this.value = formattedValue;
+    });
+    
+    $(".activate_btn").on("click", function () {
+        $(".popup__age, .overlay__white").hide();
+        $("body").removeClass("ovh");
+    });
+    
+    
 });

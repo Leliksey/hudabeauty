@@ -53,13 +53,13 @@ register_shutdown_function(function() use ($replacements) {
     <link rel="stylesheet" href="assets/font/Futura/stylesheet.css">
     <link rel="stylesheet" href="assets/font/Helvetica/stylesheet.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <title>Huda Beauty</title>
+    <title>{{site_title}}</title>
 </head>
-<body>
+<body class="ovh">
     <header class="header">
-        <div class="header__top">
-            Free Sample On Every Order
-        </div>
+    <div class="header__top">
+        {{header_top}}
+    </div>
         <div class="header__middle">
             <div class="container_1280">
                 <div class="header__middle-content">
@@ -78,29 +78,29 @@ register_shutdown_function(function() use ($replacements) {
                         </div>
                     </div>
                     <div class="header__middle-lang">
-                        Poland | EN 
+                        {{lang}}
                     </div>
                     <div class="header__middle-logo">
                         <img src="assets/img/logo.svg" alt="">
                     </div>
                     <ul class="menu">
                         <li class="menu__item">
-                            <a href="#" class="menu__link">New</a>
+                            <a href="#" class="menu__link">{{menu_1}}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link">Best Sellers</a>
+                            <a href="#" class="menu__link">{{menu_2}}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link">Huda Beauty</a>
+                            <a href="#" class="menu__link">{{menu_3}}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link">Kayali</a>
+                            <a href="#" class="menu__link">{{menu_4}}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link">wishful</a>
+                            <a href="#" class="menu__link">{{menu_5}}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link">Gifts & Sets</a>
+                            <a href="#" class="menu__link">{{menu_6}}</a>
                         </li>
                     </ul>
                     <div class="header__middle-icons">
@@ -129,22 +129,22 @@ register_shutdown_function(function() use ($replacements) {
         <div class="header__bottom">
             <ul class="menu">
                 <li class="menu__item">
-                    <a href="#" class="menu__link">New</a>
+                    <a href="#" class="menu__link">{{menu_1}}</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Best Sellers</a>
+                    <a href="#" class="menu__link">{{menu_2}}</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Huda Beauty</a>
+                    <a href="#" class="menu__link">{{menu_3}}</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Kayali</a>
+                    <a href="#" class="menu__link">{{menu_4}}</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">wishful</a>
+                    <a href="#" class="menu__link">{{menu_5}}</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Gifts & Sets</a>
+                    <a href="#" class="menu__link">{{menu_6}}</a>
                 </li>
             </ul>
         </div>
@@ -202,7 +202,12 @@ register_shutdown_function(function() use ($replacements) {
                         <svg width="40px" height="40px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000" fill="none"><path d="M9.06,25C7.68,17.3,12.78,10.63,20.73,10c7-.55,10.47,7.93,11.17,9.55a.13.13,0,0,0,.25,0c3.25-8.91,9.17-9.29,11.25-9.5C49,9.45,56.51,13.78,55,23.87c-2.16,14-23.12,29.81-23.12,29.81S11.79,40.05,9.06,25Z"/>
                         </svg>
                     </div>
-                    <img class="trustpilot" src="assets/img/trustpilot.svg" alt="">
+                    <div class="trustpilotBlock">
+                        <span>{{trustpilot_great}}</span>
+                        <img class="trustpilot" src="assets/img/trustpilot_stars.svg" alt="">
+                        <span>{{trustpilot_reviews}}</span>
+                        <img class="trustpilot" src="assets/img/trustpilot.svg" alt="">
+                    </div>
                     <div class="productInfo__rating">
                         <div class="stars">
                             <div class="star"></div>
@@ -211,27 +216,37 @@ register_shutdown_function(function() use ($replacements) {
                             <div class="star"></div>
                             <div class="star"></div>
                         </div>
-                        <a href="#reviews" class="productInfo__rating-result">4.9(814 Reviews)</a>
-                    </div>
-                    <div class="productInfo__price">
-                        <div class="price__old">{{price_old}}</div>
-                        <div class="price__new">{{price_new}}
-                            <span class="vat">Including VAT</span></div>
-                    </div>
-                    <div class="productInfo__action">
-                        <button class="order">buy now</button>
-                        <div class="productInfo__count">
-                            <div class="minus"></div>
-                            <span class="count">1</span>
-                            <div class="plus"></div>
+                        <a href="#reviews" class="productInfo__rating-result">{{rating}}</a>
                         </div>
-                    </div>
-                    <div class="productInfo__dates">
-                        🎉 Special Deal: Valid from <span id="from"></span> - <span id="to"></span>
-                    </div>
+                        <div class="productInfo__dates">
+                            🎉 {{special_deal}} <span id="from"></span> - <span id="to"></span>
+                        </div>
+                        <div class="productInfo__price">
+                            <div class="price__old">{{price_old}}</div>
+                            <div class="price__new">{{price_new}}
+                                <span class="vat">{{including_vat}}</span>
+                            </div>
+                        </div>
+                        <div class="productInfo__action">
+                            <button class="order btn_order_top">{{buy_now}}</button>
+                            <div class="productInfo__count">
+                                <div class="minus"></div>
+                                <span class="count">1</span>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
+                        <div class="productInfo__action fixing productInfo__action_bottom ">
+                            <button class="order">{{buy_now}}</button>
+
+                            <div class="productInfo__count">
+                                <div class="minus"></div>
+                                <span class="count">1</span>
+                                <div class="plus"></div>
+                            </div>
+                        </div>
                     <div class="productInfo__gift">
                         <img src="assets/img/gift.png" alt="">
-                        Buy now to earn 130 points
+                        {{gift_text}}
                     </div>
                     <div class="productInfo__tabs">
                     <?php
@@ -278,22 +293,22 @@ register_shutdown_function(function() use ($replacements) {
                         echo '</ul>';
                         ?>
                     </div>
-                    <div class="productInfo__delivery">View shipping and returns options</div>
+                    <div class="productInfo__delivery">{{shipping_returns}}</div>
                     <div class="productInfo__main_img">
                         <img src="assets/img/girl_1.jpg" alt="">
                     </div>
-                </div>
-            </section>
-            <section class="sectionReviews" id="reviews">
-                <div class="sectionReviews__title">Reviews</div>
-                <div class="sectionReviews__quotes">
-                    <img src="assets/img/quotes.png" alt="">
-                </div>
-                <p class="main__review">"The sweet and fresh notes of this fragrance are amazing...."</p>
-                <p class="main__review-author">KTNPB</p>
-                <div class="sectionReviews__action">
-                    <div class="sectionReviews__group">
-                        <div class="sectionReviews__all-rating">4.9</div>
+                    </div>
+                    </section>
+                    <section class="sectionReviews" id="reviews">
+                        <div class="sectionReviews__title">{{reviews_title}}</div>
+                        <div class="sectionReviews__quotes">
+                            <img src="assets/img/quotes.png" alt="">
+                        </div>
+                        <p class="main__review">{{main_review}}</p>
+                        <p class="main__review-author">{{review_author}}</p>
+                        <div class="sectionReviews__action">
+                            <div class="sectionReviews__group">
+                                <div class="sectionReviews__all-rating">{{all_rating}}</div>
                         <div class="stars">
                             <div class="star"></div>
                             <div class="star"></div>
@@ -301,63 +316,64 @@ register_shutdown_function(function() use ($replacements) {
                             <div class="star"></div>
                             <div class="star"></div>
                         </div>
-                        <div class="sectionReviews__all-revs">815 Reviews</div>
-                    </div>
-                    <div class="sectionReviews__btns">
-                        <button type="button" class="btn-dark write_rev">write a review</button>
-                        <button type="button" class="btn-dark ask_que">ask a question</button>
-                    </div>
-                </div>
-                <form class="addRev block-add-review" action="#" name="" method="post">
-                    <div class="addRev__title">Write a review</div>
-                    <div class="addRev__small_text label">Indicates a required field</div>
-                    <div class="addRev__medium_text label">Score:</div>
-                    <div class="addRev__stars">
-                        <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
-                        <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
-                        <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
-                        <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
-                        <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
-                    </div>
-                    <div class="addRev__medium_text label">Title:</div>
-                    <input type="text">
-                    <div class="addRev__medium_text label">Review:</div>
-                    <textarea name="" id=""></textarea>
-                    <div class="user__info">
-                        <div class="user__info-group">
-                            <div class="addRev__medium_text label">Use your name:</div>
+                        <div class="sectionReviews__all-revs">{{total_reviews}}</div>
+                        </div>
+                        <div class="sectionReviews__btns">
+                            <button type="button" class="btn-dark write_rev">{{write_review}}</button>
+                            <button type="button" class="btn-dark ask_que">{{ask_question}}</button>
+                        </div>
+                        </div>
+                        <form class="addRev block-add-review" action="#" name="" method="post">
+                            <div class="addRev__title">{{write_review_title}}</div>
+                            <div class="addRev__small_text label">{{required_field}}</div>
+                            <div class="addRev__medium_text label">{{score}}</div>
+                            <div class="addRev__stars">
+                                <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
+                                <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
+                                <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
+                                <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
+                                <svg viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M11.4987 15L5.13142 18.09L6.34747 11.545L1.19531 6.91L8.31462 5.955L11.4987 0L14.6828 5.955L21.8021 6.91L16.65 11.545L17.866 18.09L11.4987 15Z' fill='#fff' stroke='#000'/></svg>
+                            </div>
+                            <div class="addRev__medium_text label">{{review_title}}</div>
+                            <input type="text">
+                            <div class="addRev__medium_text label">{{review_text}}</div>
+                            <textarea name="" id=""></textarea>
+                            <div class="user__info">
+                                <div class="user__info-group">
+                                    <div class="addRev__medium_text label">{{use_name}}</div>
                             <input type="text">
                         </div>
                         <div class="user__info-group">
-                            <div class="addRev__medium_text label">Email::</div>
+                            <div class="addRev__medium_text label">{{email_label}}</div>
                             <input type="text">
                         </div>
-                    </div>
-                    <button type="button" class="form-send form-rev-send">POST</button>
-                </form>
-                <form class="addRev block-ask-question" action="#" name="" method="post">
-                    <div class="addRev__title">ASK A QUESTION</div>
-                    <div class="addRev__small_text label">Indicates a required field</div>
-                    <div class="addRev__medium_text label">Question:</div>
-                    <textarea name="" id=""></textarea>
-                    <div class="user__info">
-                        <div class="user__info-group">
-                            <div class="addRev__medium_text label">Use your name:</div>
-                            <input type="text">
                         </div>
-                        <div class="user__info-group">
-                            <div class="addRev__medium_text label">Email::</div>
-                            <input type="text">
-                        </div>
-                    </div>
-                    <button type="button" class="form-send form-ask-send">POST</button>
-                </form>
-                <div class="signature toped">
-                    <button type="button" class="signature__btn active write_rev">reviews</button>
-                    <button type="button" class="signature__btn ask_que">questions</button>
+                        <button type="button" class="form-send form-rev-send">{{post_button}}</button>
+                        </form>
+                        <form class="addRev block-ask-question" action="#" name="" method="post">
+                            <div class="addRev__title">{{ask_question_title}}</div>
+                            <div class="addRev__small_text label">{{required_field}}</div>
+                            <div class="addRev__medium_text label">{{question_label}}</div>
+                            <textarea name="" id=""></textarea>
+                            <div class="user__info">
+                                <div class="user__info-group">
+                                    <div class="addRev__medium_text label">{{use_name}}</div>
+                                    <input type="text">
+                                </div>
+                                <div class="user__info-group">
+                                    <div class="addRev__medium_text label">{{email_label}}</div>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <button type="button" class="form-send form-ask-send">{{post_button}}</button>
+                        </form>
+                        <div class="signature toped">
+                            <button type="button" class="signature__btn active write_rev">{{reviews_button}}</button>
+                            <button type="button" class="signature__btn ask_que">{{questions_button}}</button>
+
                 </div>
                 <div class="beTheFirst">
-                    be the first to ask a question
+                    {{be_first_to_ask_question}}
                 </div>
                 <div class="reviews__content__scroll">
                     <?php
@@ -419,49 +435,50 @@ register_shutdown_function(function() use ($replacements) {
             </section>
         </div>
         <div class="banner">
-            <div class="banner__title">#HUDABEAUTIES</div>
-            <div class="banner__text">Show us your looks and tag @hudabeauty #hudabeauties for a chance to be featured!</div>
-        </div>
-    </main>
-    <footer class="footer">
-        <div class="container_1540">
-            <div class="footer__content">
-                <div class="footer__column">
-                    <div class="footer__column-title">Account</div>
-                    <ul class="footer__column-list">
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Check Order</a></li>
+    <div class="banner__title">#{{hudabeauties}}</div>
+    <div class="banner__text">{{show_us_your_looks_and_tag}}</div>
+</div>
+</main>
+<footer class="footer">
+    <div class="container_1540">
+        <div class="footer__content">
+            <div class="footer__column">
+                <div class="footer__column-title">{{account_title}}</div>
+                <ul class="footer__column-list">
+                    <li><a href="#">{{my_account}}</a></li>
+                    <li><a href="#">{{check_order}}</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <div class="footer__column-title">{{about_huda_title}}</div>
+                <ul class="footer__column-list">
+                    <li><a href="#">{{about_huda_beauty}}</a></li>
+                    <li><a href="#">{{about_wishful}}</a></li>
+                    <li><a href="#">{{about_hudas_vips}}</a></li>
+                    <li><a href="#">{{affiliate_program}}</a></li>
+                    <li><a href="#">{{third_party_ethics}}</a></li>
+                    <li><a href="#">{{accessibility_statement}}</a></li>
+                    <li><a href="#">{{blog}}</a></li>
+
                     </ul>
                 </div>
                 <div class="footer__column">
-                    <div class="footer__column-title">About Huda</div>
+                    <div class="footer__column-title">{{customer_service_title}}</div>
                     <ul class="footer__column-list">
-                        <li><a href="#">About Huda Beauty</a></li>
-                        <li><a href="#">About WISHFUL</a></li>
-                        <li><a href="#">About Huda's VIPs</a></li>
-                        <li><a href="#">Affiliate Program</a></li>
-                        <li><a href="#">Third Party Ethical Standards</a></li>
-                        <li><a href="#">Accessibility Statement</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">{{contact_us}}</a></li>
+                        <li><a href="#">{{shipping_returns}}</a></li>
+                        <li><a href="#">{{popular_faqs}}</a></li>
+                        <li><a href="#">{{find_my_order}}</a></li>
                     </ul>
                 </div>
                 <div class="footer__column">
-                    <div class="footer__column-title">Customer Service</div>
+                    <div class="footer__column-title">{{legal_title}}</div>
                     <ul class="footer__column-list">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Popular FAQs</a></li>
-                        <li><a href="#">Find My Order</a></li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <div class="footer__column-title">Legal</div>
-                    <ul class="footer__column-list">
-                        <li><a href="#">Terms and Conditions of Sale</a></li>
-                        <li><a href="#">Privacy Notice</a></li>
-                        <li><a href="#">Do Not Sell My Personal Information</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">{{terms_conditions_of_sale}}</a></li>
+                        <li><a href="#">{{privacy_notice}}</a></li>
+                        <li><a href="#">{{do_not_sell_my_info}}</a></li>
+                        <li><a href="#">{{cookie_policy}}</a></li>
+                        <li><a href="#">{{terms_of_use}}</a></li>
                     </ul>
                 </div>
                 <div class="footer__socials">
@@ -483,9 +500,9 @@ register_shutdown_function(function() use ($replacements) {
                 </div>
             </div>
             <div class="footer__rules">
-                © 2024 Huda Beauty, All Rights Reserved.
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
+                © 2024 {{huda_beauty}}, All Rights Reserved.
+                <a href="#">{{terms_conditions}}</a>
+                <a href="#">{{privacy_policy}}</a>
             </div>
             <div class="btn-top">
                 <img src="assets/img/btn_top.png" alt="">
@@ -493,42 +510,64 @@ register_shutdown_function(function() use ($replacements) {
         </div>
         <div class="popup popup__delivery">
             <div class="popup__heading">
-                <div class="popup__title">Shipping Information</div>
+                <div class="popup__title">{{shipping_info_title}}</div>
                 <div class="popup__close">
                     <img src="assets/img/close.svg" alt="">
                 </div>
             </div>
             <div class="popup__content">
-                <div class="popup__subtitle">Shipping Info:</div>
-                <div class="popup__desc">When we receive your order, it will be processed in our France warehouse within 1-2 business days (weekends and holidays are not included). Once completed, delivery timeframe is 3-5 business days.</div>
-                <div class="popup__desc">Please consider the above as guidelines, these may be subject to change. Once an order is completed, you will receive your tracking details via email. Please allow 1 business day for your tracking number to activate.</div>
-                <div class="popup__subtitle">Returns:</div>
-                <div class="popup__desc">If you are not satisfied with your purchase, you may return your item for free within 60 days, with the exception of fragrance and other items listed on our returns FAQ (<a href="#">click HERE</a>). To arrange returns, please contact us at <a href="mailto:shop@hudabeauty.com">shop@hudabeauty.com</a>. You will be refunded for the amount paid for the product, excluding any shipping costs.</div>
+                <div class="popup__subtitle">{{shipping_info}}</div>
+                <div class="popup__desc">{{shipping_desc_1}}</div>
+                <div class="popup__desc">{{shipping_desc_2}}</div>
+                <div class="popup__subtitle">{{returns_title}}</div>
+                <div class="popup__desc">{{returns_desc}}</div>
             </div>
         </div>
         <div class="popup popup__review">
             <div class="popup__heading">
-                <div class="popup__title">Your review</div>
+                <div class="popup__title">{{review_title}}</div>
                 <div class="popup__close">
                     <img src="assets/img/close.svg" alt="">
                 </div>
             </div>
             <div class="popup__content">
-                <div class="popup__subtitle">Your review will be added soon.</div>
+                <div class="popup__subtitle">{{review_message}}</div>
             </div>
         </div>
+
         <div class="popup popup__ask">
             <div class="popup__heading">
-                <div class="popup__title">Your question</div>
+                <div class="popup__title">{{question_title}}</div>
                 <div class="popup__close">
                     <img src="assets/img/close.svg" alt="">
                 </div>
             </div>
             <div class="popup__content">
-                <div class="popup__subtitle">Your question will be published soon.</div>
+                <div class="popup__subtitle">{{question_message}}</div>
             </div>
         </div>
+
+        <div class="popup popup__age">
+            <div class="popup__content">
+                <div class="popup__title">{{titleStep1}}</div>
+                <div class="popup__subtitle">{{subtitle1}}</div>
+                <div class="popup__subtitle">{{subtitle2}}</div>
+                <form action="#" class="popup__age-form" method="post" name="">
+                    <input type="text" name="age" placeholder="{{placeholder}}">
+                    <button type="button" class="popup__age-btn">{{checkButton}}</button>
+                </form>
+            </div>
+            <div class="popup__age-step2">
+                <div class="popup__title">{{titleStep2}}</div>
+                <div class="popup__subtitle">{{subtitle3}}</div>
+                <div class="popup__subtitle">{{subtitle4}}</div>
+                <div class="popup__subtitle">{{subtitle5}}</div>
+                <button type="button" class="activate_btn">{{activateButton}}</button>
+            </div>
+        </div>
+
         <div class="overlay"></div>
+        <div class="overlay__white"></div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

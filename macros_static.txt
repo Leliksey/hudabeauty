@@ -1,48 +1,93 @@
-product_name;Peptide lip tints
 breadcrumbs_1;Home page
 breadcrumbs_2;Lips
 price_old;£79
 price_new;£9.99
-promotion_ends_days;days
-promotion_ends_hours;hours
-promotion_ends_minutes;minutes
-promotion_ends_seconds;seconds
-promotion_ends_text;La promotion se termine dans
-text_price_old;Original price was:
-text_price_new;Current price is:
-button_buy;Sold out
-only;Only
-left_stock;left in stock
-product_limit;Each product is limited to 1 per person
-people_purch;people have purchased this in
-days;days
-delivered_days;Estimated to be delivered on
-category;Category:
-category_auto_detailing;Makeup
-category_baby;Skincare
-category_bath_body;Haircare
-category_casual_snacks;Body care
-category_cleaning_supplies;Fragrances
-category_easter_decor;Nail products
-category_electronic_product;Beauty tools
-category_electronics;Men's grooming
-category_health_care;Organic cosmetics
-category_home;Travel-size products
-category_kitchen;
-category_latest;
-category_pet_supplies;
-category_sports;
-category_todays_deals;
-category_toy;
-category_uncategorized;
-text_leave_review;Laissez un avis
-text_reviews;Avis
-footer_about_store;About the store
-footer_company_policies;COMPANY POLICIES
-footer_terms_of_service;Terms Of Service
-footer_privacy_policy;Privacy Policy
-footer_return_policy;Return Policy
-footer_about_us;ABOUT US
-footer_shipping_information;Shipping Information
-footer_contact_us;Contact Us
-footer_about_us_text;About Us
+product_name;Peptide lip tints
+lang;Poland | EN
+menu_1;New  
+menu_2;Best Sellers  
+menu_3;Huda Beauty  
+menu_4;Kayali  
+menu_5;wishful  
+menu_6;Gifts & Sets  
+header_top;Free Sample On Every Order
+site_title;HudaBeauty
+trustpilot_great;Great  
+trustpilot_reviews;Reviews  
+rating;4.9(814 Reviews)  
+special_deal;Special Deal: Valid from  
+including_vat;Including VAT  
+buy_now;buy now  
+gift_text;Buy now to earn 130 points
+shipping_returns;View shipping and returns options  
+reviews_title;Reviews  
+main_review;"The sweet and fresh notes of this fragrance are amazing...."  
+review_author;KTNPB  
+all_rating;4.9  
+total_reviews;815 Reviews  
+write_review;write a review  
+ask_question;ask a question  
+write_review_title;Write a review  
+required_field;Indicates a required field  
+score;Score:  
+review_title;Title:  
+review_text;Review:  
+use_name;Use your name:  
+email_label;Email:  
+post_button;POST  
+ask_question_title;ASK A QUESTION  
+question_label;Question:  
+use_name;Use your name:  
+reviews_button;reviews  
+questions_button;questions  
+be_first_to_ask_question;be the first to ask a question
+hudabeauties;HUDABEAUTIES  
+show_us_your_looks_and_tag;Show us your looks and tag @hudabeauty #hudabeauties for a chance to be featured!  
+account_title;Account  
+my_account;My Account  
+check_order;Check Order  
+about_huda_title;About Huda  
+about_huda_beauty;About Huda Beauty  
+about_wishful;About WISHFUL  
+about_hudas_vips;About Huda's VIPs  
+affiliate_program;Affiliate Program  
+third_party_ethics;Third Party Ethical Standards  
+accessibility_statement;Accessibility Statement  
+blog;Blog  
+customer_service_title;Customer Service  
+contact_us;Contact Us  
+shipping_returns;Shipping & Returns  
+popular_faqs;Popular FAQs  
+find_my_order;Find My Order  
+legal_title;Legal  
+terms_conditions_of_sale;Terms and Conditions of Sale  
+privacy_notice;Privacy Notice  
+do_not_sell_my_info;Do Not Sell My Personal Information  
+cookie_policy;Cookie Policy  
+terms_of_use;Terms of Use  
+huda_beauty;Huda Beauty  
+terms_conditions;Terms & Conditions  
+privacy_policy;Privacy Policy  
+shipping_info_title;Shipping Information  
+shipping_info;Shipping Info:  
+shipping_desc_1;When we receive your order, it will be processed in our France warehouse within 1-2 business days (weekends and holidays are not included). Once completed, delivery timeframe is 3-5 business days.  
+shipping_desc_2;Please consider the above as guidelines, these may be subject to change. Once an order is completed, you will receive your tracking details via email. Please allow 1 business day for your tracking number to activate.  
+returns_title;Returns:  
+returns_desc;If you are not satisfied with your purchase, you may return your item for free within 60 days, with the exception of fragrance and other items listed on our returns FAQ (<a href;#">click HERE</a>). To arrange returns, please contact us at <a href;mailto:shop@hudabeauty.com">shop@hudabeauty.com</a>. You will be refunded for the amount paid for the product, excluding any shipping costs.  
+review_title;Your review  
+review_message;Your review will be added soon.  
+question_title;Your question  
+question_message;Your question will be published soon.  
+titleStep1;🎉 Молодёжь рулит! Твой год рождения может дать тебе скидку до 90%!"
+subtitle1;Мы запустили секретную акцию только для молодых! 🧑‍🎓💥 Если твой год рождения попадает в список, ты сможешь купить трендовые вещи почти бесплатно!"
+subtitle2;🔥 Проверь, входит ли твой год в число счастливчиков — введи его ниже!"
+placeholder;YYYY.MM.DD"
+checkButton;Проверить мой год"
+titleStep2;🔥 ДА! Твой год рождения в списке!"
+subtitle3;Только молодые получают секретную скидку до 90%, и ты среди избранных! 😎"
+subtitle4;🎁 Бренды поддерживают молодёжь, делая стильные вещи максимально доступными."
+subtitle5;⏳ Успей воспользоваться шансом и забрать свою скидку прямо сейчас!"
+activateButton;Активировать скидку"
+
+
+
